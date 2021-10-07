@@ -1,9 +1,10 @@
 import React from 'react'
+import { Navbar } from '../Nav/Navbar'
 
 export const Productos = () => {
     return (
         <div>
-            <h1>Pantalla de productos</h1>
+            <Navbar />
         </div>
     )
 }
