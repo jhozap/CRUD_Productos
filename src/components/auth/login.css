@@ -1,5 +1,7 @@
 .login-container{
-    margin-top: 15%;
+    margin-top: 8%;
+    margin-left: 2%;
+    background-color: white;
 }
 .login-form-1{
     border-radius: 5px;
@@ -48,4 +50,10 @@
     color: #0062cc;
     font-weight: 600;
     text-decoration: none;
+}
+
+.login {
+    overflow: hidden;
+    background-image: url('https://www.wearemarketing.com/media/cache/dynamic/rc/rdHgzdry//uploads/media/default/0001/21/0055400d5ced4f6b7007e7985b8e2152f3e32207.jpeg');
+    height: 100vh;
 }

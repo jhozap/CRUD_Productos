@@ -6,7 +6,7 @@ import {
     Redirect
 } from "react-router-dom";
 import { Login } from '../components/auth/Login';
-import { Productos } from '../components/Productos/Productos';
+import { ContentRouter } from './ContentRouter';
 
 export const AppRouter = () => {
     return (
@@ -14,7 +14,7 @@ export const AppRouter = () => {
             <div>
                 <Switch>
                     <Route exact path="/login" component={ Login } />
-                    <Route exact path="/" component={ Productos } />
+                    <Route exact path="/" component={ ContentRouter } />
                     <Redirect to="/" />
                 </Switch>
             </div>

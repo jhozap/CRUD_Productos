@@ -1,16 +1,17 @@
 import React from 'react'
+import './navbar.css';
 
 export const Navbar = () => {
     return (
-        <div className="navbar navbar-dark bg-dark mb-4">
+        <nav className="navbar navbar-dark bg-dark shadow sticky-top">
             <samp className="navbar-brand">
-                Navbar
+                Bienvenido <a className="nav-link active" href="#/">@Jhonny Zapata</a>
             </samp>
 
             <button className="btn btn-outline-danger">
                 <i className="fas fa-sign-out-alt"></i>
                 <span> Salir</span>
             </button>
-        </div>
+        </nav>
     )
 }
