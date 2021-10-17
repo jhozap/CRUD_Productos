@@ -1,21 +1,20 @@
 import React from 'react';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
-    Redirect
+    Switch
 } from "react-router-dom";
 import { Login } from '../components/auth/Login';
 import { ContentRouter } from './ContentRouter';
+import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
 
 export const AppRouter = () => {
     return (
         <Router>
             <div>
                 <Switch>
-                    <Route exact path="/login" component={ Login } />
-                    <Route exact path="/" component={ ContentRouter } />
-                    <Redirect to="/" />
+                    <PublicRoute exact path="/login" component={ Login } />
+                    <PrivateRoute path="/" component={ ContentRouter } />  
                 </Switch>
             </div>
         </Router>

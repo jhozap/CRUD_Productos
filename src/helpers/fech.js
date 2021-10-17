@@ -2,6 +2,8 @@ const baseUrl = process.env.React_App_API_Url;
 
 const fetchSinToken = (endpoint, data, method = 'GET') => {
 
+    console.log('dentro del fetch');
+
     const url = `${ baseUrl }/${ endpoint }`;
 
     if(method === 'GET') {
