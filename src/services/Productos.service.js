@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { constants } from '../util/constants';
-export const listarProductos = async (token) => {    
+export const listarProductos = (token) => {    
 
     try {
-        return await axios({
+        return axios({
             method: 'GET',
             url: `${process.env.React_App_API_Url}${constants.listarProductos}`,
             headers: {
@@ -11,6 +11,6 @@ export const listarProductos = async (token) => {
             }
         });
     } catch (error) {
-        throw new Error(error);
+        throw error.status;
     }
 }

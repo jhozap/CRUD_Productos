@@ -30,3 +30,9 @@
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem;
 }
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

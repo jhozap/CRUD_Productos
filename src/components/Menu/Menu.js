@@ -22,7 +22,6 @@ export const Menu = () => {
                         <NavLink
                             activeClassName="active"
                             className="nav-link"
-                            exact
                             to="/productos">
                             <i className="fas fa-cart-arrow-down"> </i>
                             Productos
@@ -38,7 +37,6 @@ export const Menu = () => {
                         <NavLink
                             activeClassName="active"
                             className="nav-link"
-                            exact
                             to="/usuarios">
                             <i className="fas fa-users"></i>
                             Usuarios

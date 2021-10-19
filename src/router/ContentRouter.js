@@ -4,6 +4,7 @@ import {
     Route,
     Redirect
 } from "react-router-dom";
+import CrearProducto from '../components/Content/Productos/Crear/CrearProducto';
 import { Productos } from '../components/Content/Productos/Productos';
 import { Usuarios } from '../components/Content/Usuarios/Usuarios';
 import { Menu } from '../components/Menu/Menu';
@@ -18,10 +19,10 @@ export const ContentRouter = () => {
                     <Menu />
                     <main className="col-md-9 ml-sm-auto col-lg-10 px-md-4">
                         <Switch>
-                            <Route exact path="/productos/" component={Productos} />
+                            <Route exact path="/productos/:id" component={Productos} />
                             <Route exact path="/usuarios/" component={Usuarios} />
 
-                            <Redirect to="/productos" />
+                            <Redirect to="/productos/list" />
 
                         </Switch>
                     </main>
