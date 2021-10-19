@@ -10,24 +10,24 @@ import 'notie/dist/notie.css';
 import { loginGoogle } from '../../services/Auth.service';
 
 export const Login = () => {
-    const history = useHistory();
+    // const history = useHistory();
     const auth = useAuth();
 
-    const [formLoginValues, handleLoginInputChange] = useForm({
-        lEmail: '',
-        lPassword: ''
-    });
+    // const [formLoginValues, handleLoginInputChange] = useForm({
+    //     lEmail: '',
+    //     lPassword: ''
+    // });
 
-    const { lEmail, lPassword } = formLoginValues;
+    // const { lEmail, lPassword } = formLoginValues;
 
-    const handleLogin = (e) => {
-        e.preventDefault();
+    // const handleLogin = (e) => {
+    //     e.preventDefault();
 
-        auth.setToken('abc123');
-        auth.setUser({ id: 1, username: 'Jhonny' });
-        history.push('/productos');
+    //     auth.setToken('abc123');
+    //     auth.setUser({ id: 1, username: 'Jhonny' });
+    //     history.push('/productos');
 
-    }
+    // }
 
     const responseGoogle = async (resp) => {
 
@@ -69,30 +69,30 @@ export const Login = () => {
 
     }
 
-    const googleSignin = async (resp) => {
-        try {
-            const { status, data } = await loginGoogle(resp);
+    // const googleSignin = async (resp) => {
+    //     try {
+    //         const { status, data } = await loginGoogle(resp);
 
-            console.log(status, data);
-            if (status === 200) {
+    //         console.log(status, data);
+    //         if (status === 200) {
 
-                auth.setToken(data.token);
-                auth.setUser({ uid: data.uid, name: data.name });
+    //             auth.setToken(data.token);
+    //             auth.setUser({ uid: data.uid, name: data.name });
 
-            } else if (status === 201) {
-                notie.alert({ text: data.msg, type: 'success', time: 10 });
-            }
-        } catch (error) {
+    //         } else if (status === 201) {
+    //             notie.alert({ text: data.msg, type: 'success', time: 10 });
+    //         }
+    //     } catch (error) {
 
-            // console.log(error.error);
+    //         // console.log(error.error);
 
-            if (error.response.status === 401) {
-                notie.alert({ text: error.response.data.msg, type: 'warning', time: 10 });
-            } else {
-                notie.alert({ text: error.response.data.msg, type: 'error', time: 10 });
-            }
-        }
-    }
+    //         if (error.response.status === 401) {
+    //             notie.alert({ text: error.response.data.msg, type: 'warning', time: 10 });
+    //         } else {
+    //             notie.alert({ text: error.response.data.msg, type: 'error', time: 10 });
+    //         }
+    //     }
+    // }
 
 
     return (
@@ -100,15 +100,13 @@ export const Login = () => {
             <div className="row">
                 <div className="col-md-6 login-form-1 login-container">
                     <h3>Ingreso</h3>
-                    <form onSubmit={handleLogin}>
+                    <form>
                         <div className="form-group">
                             <input
                                 type="text"
                                 className="form-control"
                                 placeholder="Correo"
                                 name="lEmail"
-                                value={lEmail}
-                                onChange={handleLoginInputChange}
                             />
                         </div>
                         <div className="form-group">
@@ -117,8 +115,6 @@ export const Login = () => {
                                 className="form-control"
                                 placeholder="Contraseña"
                                 name="lPassword"
-                                value={lPassword}
-                                onChange={handleLoginInputChange}
                             />
                         </div>
                         <div className="form-group">
